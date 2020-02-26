@@ -12,7 +12,10 @@ ps:
 	@docker-compose ps
 
 connect_node:
-	@docker-compose exec -w /www node bash
+	@docker-compose exec -w /www api bash
 
-start_react:
-	@docker-compose exec -w /www node yarn start
+connect_db:
+	@docker-compose exec db sh
+
+start_node:
+	@docker-compose exec -w /www api npm run dev
